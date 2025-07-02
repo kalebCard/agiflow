@@ -1,4 +1,4 @@
-# AgiFlow
+# agiflow
 
 Este proyecto es una aplicación web construida con [Next.js](https://nextjs.org/) y [React](https://react.dev/), utilizando [pnpm](https://pnpm.io/) como gestor de paquetes.
 
@@ -13,7 +13,7 @@ Este proyecto es una aplicación web construida con [Next.js](https://nextjs.org
 
    ```bash
    git clone <URL-del-repositorio>
-   cd AgiFlow
+   cd agiflow
    ```
 
 2. Instala las dependencias:
