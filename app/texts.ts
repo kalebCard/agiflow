@@ -94,13 +94,14 @@ const texts = {
     description: "Únete a cientos de emprendedores que ya están automatizando sus procesos y multiplicando sus resultados.",
     inputPlaceholder: "Tu correo empresarial",
     cta: "Comenzar gratis",
-    note: "Sin compromiso. Cancela cuando quieras."
+    note: "Sin compromiso. Cancela cuando quieras.",
+    whatsapp: "Contáctanos por WhatsApp: +57 322 532 5279"
   },
   footer: {
     copyright: "© 2024 agiflow.pro. Todos los derechos reservados.",
     terms: "Términos de Servicio",
     privacy: "Política de Privacidad",
-    contact: "Contacto"
+    contact: "WhatsApp: +57 322 532 5279"
   }
 }
 
