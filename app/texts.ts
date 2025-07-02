@@ -2,7 +2,7 @@
 
 const texts = {
   header: {
-    brand: "agiflow.pro",
+    brand: "AgiFlow",
     nav: {
       features: "Características",
       pricing: "Precios",
@@ -13,14 +13,14 @@ const texts = {
     register: "Registrarse"
   },
   hero: {
-    title: "Transforma tu negocio con Inteligencia Artificial",
+    title: "Transforma tu Negocio",
     description: "Automatiza tareas, toma mejores decisiones y atrae más clientes con soluciones accesibles de IA diseñadas para pequeñas y medianas empresas.",
-    cta: "Solicita una asesoría gratuita"
+    cta: "¡Quiero mi asesoría gratuita!"
   },
   offer24h: {
-    badge: "OFERTA 24 HORAS",
     title: "Capacitación GRATUITA \"Transforma tu Negocio\"",
     description: "Comienza a automatizar y ahorra tiempo hoy mismo.",
+    infoBtn: "Más información",
     cta: "Reclama tu oferta ahora"
   },
   queEs: {
