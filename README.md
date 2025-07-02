@@ -1,30 +1,73 @@
-# Agiflow Landing Page
+# AgiFlow
 
-*Automatically synced with your [v0.dev](https://v0.dev) deployments*
+Este proyecto es una aplicación web construida con [Next.js](https://nextjs.org/) y [React](https://react.dev/), utilizando [pnpm](https://pnpm.io/) como gestor de paquetes.
 
-[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/kalebcards-projects/v0-agiflow-landing-page)
-[![Built with v0](https://img.shields.io/badge/Built%20with-v0.dev-black?style=for-the-badge)](https://v0.dev/chat/projects/0aoi43YgkpF)
+## Requisitos previos
 
-## Overview
+- [Node.js](https://nodejs.org/) (recomendado v18 o superior)
+- [pnpm](https://pnpm.io/) (recomendado v8 o superior)
 
-This repository will stay in sync with your deployed chats on [v0.dev](https://v0.dev).
-Any changes you make to your deployed app will be automatically pushed to this repository from [v0.dev](https://v0.dev).
+## Instalación
 
-## Deployment
+1. Clona el repositorio:
 
-Your project is live at:
+   ```bash
+   git clone <URL-del-repositorio>
+   cd AgiFlow
+   ```
 
-**[https://vercel.com/kalebcards-projects/v0-agiflow-landing-page](https://vercel.com/kalebcards-projects/v0-agiflow-landing-page)**
+2. Instala las dependencias:
 
-## Build your app
+   ```bash
+   pnpm install
+   ```
 
-Continue building your app on:
+## Comandos principales
 
-**[https://v0.dev/chat/projects/0aoi43YgkpF](https://v0.dev/chat/projects/0aoi43YgkpF)**
+- `pnpm dev`: Inicia el servidor de desarrollo en [http://localhost:3000](http://localhost:3000)
+- `pnpm build`: Genera la build de producción
+- `pnpm start`: Inicia la aplicación en modo producción (requiere haber ejecutado `pnpm build` antes)
+- `pnpm lint`: Ejecuta el linter para revisar el código
 
-## How It Works
+## Despliegue
 
-1. Create and modify your project using [v0.dev](https://v0.dev)
-2. Deploy your chats from the v0 interface
-3. Changes are automatically pushed to this repository
-4. Vercel deploys the latest version from this repository
+1. Construye la aplicación:
+
+   ```bash
+   pnpm build
+   ```
+
+2. Inicia el servidor en producción:
+
+   ```bash
+   pnpm start
+   ```
+
+Puedes desplegar la aplicación en cualquier plataforma que soporte Node.js, como Vercel, Netlify, o servidores propios.
+
+## Estructura del proyecto
+
+- `/app`: Páginas y layouts principales de la aplicación
+- `/components`: Componentes reutilizables de UI
+- `/hooks`: Hooks personalizados
+- `/lib`: Funciones utilitarias
+- `/public`: Archivos estáticos
+- `/styles`: Archivos de estilos globales
+
+## Tecnologías principales
+
+- Next.js 15
+- React 19
+- Tailwind CSS
+- Radix UI
+- TypeScript
+
+## Notas adicionales
+
+- El archivo `next.config.mjs` contiene configuraciones personalizadas para Next.js.
+- El proyecto utiliza Tailwind CSS para estilos y utilidades.
+- Para desarrollo, puedes modificar los archivos en `/app` y `/components`.
+
+---
+
+Si tienes dudas o encuentras algún problema, por favor abre un issue o contacta al mantenedor del repositorio. 
