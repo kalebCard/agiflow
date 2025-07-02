@@ -13,9 +13,9 @@ const texts = {
     register: "Registrarse"
   },
   hero: {
-    title: "🚀 Transforma tu negocio con Inteligencia Artificial",
+    title: "Transforma tu negocio con Inteligencia Artificial",
     description: "Automatiza tareas, toma mejores decisiones y atrae más clientes con soluciones accesibles de IA diseñadas para pequeñas y medianas empresas.",
-    cta: "📲 Solicita una asesoría gratuita"
+    cta: "Solicita una asesoría gratuita"
   },
   offer24h: {
     badge: "OFERTA 24 HORAS",
@@ -37,37 +37,37 @@ const texts = {
   planes: {
     title: "Planes y beneficios",
     basico: {
-      title: "🔹 Plan Básico – \"Presencia Inteligente\"",
+      title: "Plan Básico – Presencia Inteligente",
       description: "Ideal para comenzar",
       bullets: [
-        "✔️ Landing page profesional",
-        "✔️ Capacitación gratuita en herramientas IA",
-        "✔️ Conexión con WhatsApp para atención automatizada"
+        "Landing page profesional",
+        "Capacitación gratuita en herramientas IA",
+        "Conexión con WhatsApp para atención automatizada"
       ],
-      highlight: "🎯 Hasta 40% más clientes desde el primer mes"
+      highlight: "Hasta 40% más clientes desde el primer mes"
     },
     medio: {
-      title: "🟠 Plan Medio – \"Automatiza tu Negocio\"",
+      title: "Plan Medio – Automatiza tu Negocio",
       description: "Para quienes quieren escalar",
       bullets: [
-        "✔️ MVP funcional con chatbot",
-        "✔️ Dashboard para controlar tu negocio",
-        "✔️ Automatizaciones simples (respuestas, reservas, inventarios)",
-        "✔️ 1 campaña en Google Ads incluida"
+        "MVP funcional con chatbot",
+        "Dashboard para controlar tu negocio",
+        "Automatizaciones simples (respuestas, reservas, inventarios)",
+        "1 campaña en Google Ads incluida"
       ],
-      highlight: "💰 Ahorra 6 horas semanales y aumenta tus ventas hasta 25%"
+      highlight: "Ahorra 6 horas semanales y aumenta tus ventas hasta 25%"
     },
     pro: {
-      title: "🔴 Plan Pro – \"IA en el Centro del Negocio\"",
+      title: "Plan Pro – IA en el Centro del Negocio",
       description: "Tu negocio impulsado por inteligencia artificial",
       bullets: [
-        "✔️ Asistente IA personalizado para tu negocio",
-        "✔️ Automatización total de procesos repetitivos",
-        "✔️ Análisis de datos en tiempo real",
-        "✔️ Dashboards inteligentes para decisiones rápidas",
-        "✔️ Campañas publicitarias optimizadas con IA"
+        "Asistente IA personalizado para tu negocio",
+        "Automatización total de procesos repetitivos",
+        "Análisis de datos en tiempo real",
+        "Dashboards inteligentes para decisiones rápidas",
+        "Campañas publicitarias optimizadas con IA"
       ],
-      highlight: "📈 ROI entre 2x y 5x en 3 a 6 meses"
+      highlight: "ROI entre 2x y 5x en 3 a 6 meses"
     }
   },
   soluciones: {
@@ -83,10 +83,10 @@ const texts = {
   resultados: {
     title: "Resultados esperados",
     bullets: [
-      "✅ 3x más consultas desde el primer mes",
-      "✅ Ahorro de 5–10 horas a la semana",
-      "✅ 15–50% más ventas en 90 días",
-      "✅ Control total desde el celular"
+      "3x más consultas desde el primer mes",
+      "Ahorro de 5–10 horas a la semana",
+      "15–50% más ventas en 90 días",
+      "Control total desde el celular"
     ]
   },
   finalCta: {
