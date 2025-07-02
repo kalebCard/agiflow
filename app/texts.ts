@@ -90,14 +90,14 @@ const texts = {
     ]
   },
   finalCta: {
-    title: "Ready to Transform Your Business?",
-    description: "Join hundreds of entrepreneurs who are already automating their processes and multiplying their results.",
-    inputPlaceholder: "Your business email",
+    title: "¿Listo para transformar tu negocio?",
+    description: "Únete a cientos de emprendedores que ya están automatizando sus procesos y multiplicando sus resultados.",
+    inputPlaceholder: "Tu correo empresarial",
     cta: "Comenzar gratis",
     note: "Sin compromiso. Cancela cuando quieras."
   },
   footer: {
-    copyright: "© 2024 agiflow.pro. All rights reserved.",
+    copyright: "© 2024 agiflow.pro. Todos los derechos reservados.",
     terms: "Términos de Servicio",
     privacy: "Política de Privacidad",
     contact: "Contacto"
