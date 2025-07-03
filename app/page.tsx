@@ -92,15 +92,36 @@ export default function agiflowLanding() {
           <section id="que-es" className="w-full py-12 md:py-16 lg:py-20 bg-slate-800/50">
             <div className="container px-4 md:px-6 mx-auto max-w-7xl text-center">
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">{texts.queEs.title}</h2>
-              <p className="text-lg text-white/90 mb-4">
+              <p className="text-lg text-white/90 mb-8">
                 {texts.queEs.description}
               </p>
-              <ul className="text-white/80 text-left max-w-xl mx-auto mb-4 space-y-2">
-                {texts.queEs.bullets.map((item, idx) => (
-                  <li key={idx}>• {item}</li>
-                ))}
-              </ul>
-              <p className="text-white/90">{texts.queEs.closing}</p>
+              <div className="grid gap-6 md:grid-cols-3 max-w-4xl mx-auto mb-6">
+                {/* Pilar 1 */}
+                <div className="bg-slate-900/80 rounded-xl shadow-lg p-6 flex flex-col items-center hover:scale-105 transition-transform border border-blue-700/40">
+                  <span className="bg-blue-700/20 p-3 rounded-full mb-4">
+                    <Clock className="h-10 w-10 text-blue-400" />
+                  </span>
+                  <h3 className="text-xl font-semibold text-white mb-2 text-center">Operaciones Inteligentes 24/7</h3>
+                  <p className="text-white/80 text-base text-center">Robots de software y chatbots inteligentes que manejan facturación, atención y reservas sin intervención humana.</p>
+                </div>
+                {/* Pilar 2 */}
+                <div className="bg-slate-900/80 rounded-xl shadow-lg p-6 flex flex-col items-center hover:scale-105 transition-transform border border-green-700/40">
+                  <span className="bg-green-700/20 p-3 rounded-full mb-4">
+                    <TrendingUp className="h-10 w-10 text-green-400" />
+                  </span>
+                  <h3 className="text-xl font-semibold text-white mb-2 text-center">Ventas Automáticas Sin Pausa</h3>
+                  <p className="text-white/80 text-base text-center">Embudos de captación y campañas de IA que atraen, nutren y convierten clientes 24/7.</p>
+                </div>
+                {/* Pilar 3 */}
+                <div className="bg-slate-900/80 rounded-xl shadow-lg p-6 flex flex-col items-center hover:scale-105 transition-transform border border-purple-700/40">
+                  <span className="bg-purple-700/20 p-3 rounded-full mb-4">
+                    <BarChart3 className="h-10 w-10 text-purple-400" />
+                  </span>
+                  <h3 className="text-xl font-semibold text-white mb-2 text-center">Decisiones en tiempo real</h3>
+                  <p className="text-white/80 text-base text-center">Dashboards que muestran métricas al instante y alertas inteligentes solo cuando necesitas actuar.</p>
+                </div>
+              </div>
+              <p className="text-white/90 text-lg max-w-2xl mx-auto">{texts.queEs.closing}</p>
             </div>
           </section>
 
