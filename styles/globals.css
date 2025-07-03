@@ -47,6 +47,11 @@ body {
     --sidebar-accent-foreground: 240 5.9% 10%;
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
+    --brand-primary: 248 100% 62%; /* Indigo más vivo */
+    --brand-secondary: 172 100% 45%; /* Teal más vivo */
+    --brand-accent: 348 100% 70%; /* Coral más vivo */
+    --brand-success: 89 100% 60%; /* Lima más vivo */
+    --brand-neutral: 222 30% 22%; /* Gris carbón más contrastado */
   }
   .dark {
     --background: 0 0% 3.9%;
@@ -81,6 +86,11 @@ body {
     --sidebar-accent-foreground: 240 4.8% 95.9%;
     --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
+    --brand-primary: 248 100% 62%; /* Indigo más vivo */
+    --brand-secondary: 172 100% 45%; /* Teal más vivo */
+    --brand-accent: 348 100% 70%; /* Coral más vivo */
+    --brand-success: 89 100% 60%; /* Lima más vivo */
+    --brand-neutral: 222 30% 22%; /* Gris carbón más contrastado */
   }
 }
 

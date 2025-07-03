@@ -62,6 +62,12 @@ Puedes desplegar la aplicación en cualquier plataforma que soporte Node.js, com
 - Radix UI
 - TypeScript
 
+## Estilos y gestión de colores
+
+La gestión de colores está **centralizada** usando variables CSS en los archivos `styles/globals.css` y `app/globals.css`. Los colores corporativos principales están definidos como variables CSS (`--brand-primary`, `--brand-secondary`, etc.) y mapeados en `tailwind.config.ts` para poder usarse como clases de Tailwind (`bg-brand-primary`, `text-brand-accent`, etc.).
+
+Para agregar o modificar colores, edita las variables en los archivos de estilos globales y/o el mapeo en la configuración de Tailwind.
+
 ## Notas adicionales
 
 - El archivo `next.config.mjs` contiene configuraciones personalizadas para Next.js.

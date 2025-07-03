@@ -146,11 +146,11 @@ export default function BeamsBackground({ className, intensity = "strong" }: Ani
   }, [intensity])
 
   return (
-    <div className={cn("relative min-h-screen w-full overflow-hidden bg-[#2a003f]", className)}>
+    <div className={cn("relative min-h-screen w-full overflow-hidden bg-brand-neutral", className)}>
       <canvas ref={canvasRef} className="absolute inset-0" style={{ filter: "blur(15px)" }} />
 
       <motion.div
-        className="absolute inset-0 bg-[#2a003f]/60"
+        className="absolute inset-0 bg-brand-neutral/60"
         animate={{
           opacity: [0.05, 0.15, 0.05],
         }}

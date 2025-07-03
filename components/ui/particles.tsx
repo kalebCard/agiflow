@@ -39,7 +39,7 @@ interface ForceField {
 
 export function AdvancedParticleSystem() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
-  const particlesRef = useRef<Particle[]>([])
+  const particlesRef = useRef<Particle[]>([] as Particle[])
   const formationsRef = useRef<Formation[]>([])
   const forceFieldsRef = useRef<ForceField[]>([])
   const animationRef = useRef<number>(0)
@@ -170,16 +170,26 @@ export function AdvancedParticleSystem() {
     [clamp],
   )
 
+  // Utilidad para obtener el valor real de una variable CSS y convertirlo a hsl/hsla
+  function getCssHslVariable(variableName: string, alpha?: number): string {
+    const root = document.documentElement;
+    let value = getComputedStyle(root).getPropertyValue(variableName).trim();
+    // value esperado: '222 21% 27%'
+    if (!value) return 'hsl(0,0%,0%)';
+    // Reemplazar espacios por comas para formato canvas
+    value = value.replace(/\s+/g, ', ');
+    if (alpha !== undefined) {
+      return `hsla(${value}, ${alpha})`;
+    }
+    return `hsl(${value})`;
+  }
+
   const createParticle = useCallback(
     (x: number, y: number, type: ParticleType): Particle => {
-      const colors = {
-        orbiter: 'rgba(255,255,255,0.1)',
-        floater: 'rgba(255,255,255,0.1)',
-        connector: 'rgba(255,255,255,0.1)',
-        morpher: 'rgba(255,255,255,0.1)',
-        attractor: 'rgba(255,255,255,0.1)',
-      }
-
+      // Obtener el color real de la variable CSS al crear el partícula
+      let color = getCssHslVariable('--brand-neutral', 0.1);
+      if (type === 'connector') color = getCssHslVariable('--brand-primary', 0.25);
+      // Puedes personalizar más según el tipo si lo deseas
       return {
         x: x + (Math.random() - 0.5) * 20,
         y: y + (Math.random() - 0.5) * 20,
@@ -189,7 +199,7 @@ export function AdvancedParticleSystem() {
         targetY: y,
         size: clamp(Math.random() * 2 + 1, 0.5, 4), // Ensure minimum size
         opacity: clamp(Math.random() * 0.8 + 0.2, 0.1, 1),
-        color: colors[type],
+        color,
         type,
         life: 0,
         maxLife: 1000 + Math.random() * 2000,
@@ -202,8 +212,12 @@ export function AdvancedParticleSystem() {
     [clamp],
   )
 
-  const updateParticlePhysics = useCallback(
-    (particle: Particle, time: number, allParticles: Particle[]) => {
+  const updateParticlePhysics: (
+    particle: Particle,
+    time: number,
+    allParticles: Particle[]
+  ) => void = useCallback(
+    (particle, time, allParticles) => {
       const mouse = mouseRef.current
 
       // Age the particle
@@ -227,20 +241,22 @@ export function AdvancedParticleSystem() {
 
         case "connector":
           // Attracted to nearby particles
-          let nearestParticle: Particle | null = null
+          let nearestParticle = null as Particle | null
           let minDistance = Number.POSITIVE_INFINITY
-          allParticles.forEach((other) => {
-            if (other !== particle && other.type === "connector") {
-              const dx = other.x - particle.x
-              const dy = other.y - particle.y
-              const distance = Math.sqrt(dx * dx + dy * dy)
-              if (distance < minDistance && distance < 80) {
-                minDistance = distance
-                nearestParticle = other
+          if (Array.isArray(allParticles)) {
+            allParticles.forEach((other: Particle) => {
+              if (other !== particle && other.type === "connector") {
+                const dx = other.x - particle.x
+                const dy = other.y - particle.y
+                const distance = Math.sqrt(dx * dx + dy * dy)
+                if (distance < minDistance && distance < 80) {
+                  minDistance = distance
+                  nearestParticle = other
+                }
               }
-            }
-          })
-          if (nearestParticle) {
+            })
+          }
+          if (nearestParticle !== null) {
             const attraction = 0.015
             particle.vx += (nearestParticle.x - particle.x) * attraction
             particle.vy += (nearestParticle.y - particle.y) * attraction
@@ -353,7 +369,7 @@ export function AdvancedParticleSystem() {
         for (let i = 1; i < particle.trail.length; i++) {
           ctx.lineTo(particle.trail[i].x, particle.trail[i].y)
         }
-        ctx.strokeStyle = particle.color.replace("60%)", `60%, ${safeOpacity * 0.3})`)
+        ctx.strokeStyle = particle.color
         ctx.lineWidth = 1
         ctx.stroke()
       }
@@ -361,8 +377,8 @@ export function AdvancedParticleSystem() {
       // Draw particle glow
       const glowSize = ensurePositiveRadius(safeSize * 6)
       const glowGradient = ctx.createRadialGradient(safeX, safeY, 0, safeX, safeY, glowSize)
-      glowGradient.addColorStop(0, particle.color.replace("60%)", `60%, ${Math.min(1, safeOpacity * 0.8)})`))
-      glowGradient.addColorStop(1, particle.color.replace("60%)", "60%, 0)"))
+      glowGradient.addColorStop(0, particle.color)
+      glowGradient.addColorStop(1, particle.color.replace(/, [\d.]+\)$/, ', 0)'))
 
       ctx.beginPath()
       ctx.arc(safeX, safeY, glowSize, 0, Math.PI * 2)
@@ -417,7 +433,7 @@ export function AdvancedParticleSystem() {
           break
       }
 
-      ctx.fillStyle = particle.color.replace("60%)", `60%, ${Math.min(1, safeOpacity * 0.9)})`)
+      ctx.fillStyle = particle.color
       ctx.fill()
 
       // Add energy visualization for attractors
@@ -425,7 +441,7 @@ export function AdvancedParticleSystem() {
         const energyRadius = ensurePositiveRadius(safeSize * 3.2 + Math.sin(time * 0.01) * 6)
         ctx.beginPath()
         ctx.arc(safeX, safeY, energyRadius, 0, Math.PI * 2)
-        ctx.strokeStyle = particle.color.replace("60%)", `60%, ${safeOpacity * 0.25})`)
+        ctx.strokeStyle = particle.color
         ctx.lineWidth = 2.5
         ctx.stroke()
       }
@@ -448,7 +464,7 @@ export function AdvancedParticleSystem() {
                 ctx.beginPath()
                 ctx.moveTo(particle.x, particle.y)
                 ctx.lineTo(otherParticle.x, otherParticle.y)
-                ctx.strokeStyle = `rgba(100, 200, 255, ${opacity})`
+                ctx.strokeStyle = getCssHslVariable('--brand-primary', opacity)
                 ctx.lineWidth = 1.5
                 ctx.stroke()
               }

@@ -13,7 +13,7 @@ const texts = {
     register: "Registrarse"
   },
   hero: {
-    title: "¿Y si tuvieras un socio que no descansa, no se equivoca y nunca te va arobar?",
+    title: "¿Y si tuvieras un socio que no descansa y no se equivoca?",
     description: "Eso es lo que hace la Inteligencia Artificial por tu negocio: trabaja 24/7, sin errores, y solo para ti. Y lo mejor: empiezas a ver resultados desde el primer mes.",
     cta: "¡Quiero mi asesoría gratuita!"
   },
