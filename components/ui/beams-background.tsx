@@ -34,8 +34,8 @@ function createBeam(width: number, height: number): Beam {
     length: height * 2.5,
     angle: angle,
     speed: 0.6 + Math.random() * 1.2,
-    opacity: 0.12 + Math.random() * 0.16,
-    hue: 270 + Math.random() * 20,
+    opacity: 0.22 + Math.random() * 0.18,
+    hue: 260 + Math.random() * 60,
     pulse: Math.random() * Math.PI * 2,
     pulseSpeed: 0.02 + Math.random() * 0.03,
   }
@@ -96,17 +96,17 @@ export default function BeamsBackground({ className, intensity = "strong" }: Ani
       ctx.rotate((beam.angle * Math.PI) / 180)
 
       // Calculate pulsing opacity
-      const pulsingOpacity = beam.opacity * (0.8 + Math.sin(beam.pulse) * 0.2) * opacityMap[intensity]
+      const pulsingOpacity = beam.opacity * (0.9 + Math.sin(beam.pulse) * 0.3) * opacityMap[intensity]
 
       const gradient = ctx.createLinearGradient(0, 0, 0, beam.length)
 
-      // Enhanced gradient with multiple color stops
-      gradient.addColorStop(0, `hsla(${beam.hue}, 100%, 70%, 0)`)
-      gradient.addColorStop(0.1, `hsla(${beam.hue}, 100%, 70%, ${pulsingOpacity * 0.7})`)
-      gradient.addColorStop(0.4, `hsla(${beam.hue}, 100%, 70%, ${pulsingOpacity * 1.2})`)
-      gradient.addColorStop(0.6, `hsla(${beam.hue}, 100%, 70%, ${pulsingOpacity * 1.2})`)
-      gradient.addColorStop(0.9, `hsla(${beam.hue}, 100%, 70%, ${pulsingOpacity * 0.7})`)
-      gradient.addColorStop(1, `hsla(${beam.hue}, 100%, 70%, 0)`)
+      // Gradiente más saturado y brillante
+      gradient.addColorStop(0, `hsla(${beam.hue}, 100%, 80%, 0)`)
+      gradient.addColorStop(0.1, `hsla(${beam.hue}, 100%, 70%, ${pulsingOpacity * 0.9})`)
+      gradient.addColorStop(0.4, `hsla(${beam.hue}, 100%, 60%, ${pulsingOpacity * 1.5})`)
+      gradient.addColorStop(0.6, `hsla(${beam.hue}, 100%, 60%, ${pulsingOpacity * 1.5})`)
+      gradient.addColorStop(0.9, `hsla(${beam.hue}, 100%, 70%, ${pulsingOpacity * 0.9})`)
+      gradient.addColorStop(1, `hsla(${beam.hue}, 100%, 80%, 0)`)
 
       ctx.fillStyle = gradient
       ctx.fillRect(-beam.width / 2, 0, beam.width, beam.length)
@@ -117,7 +117,7 @@ export default function BeamsBackground({ className, intensity = "strong" }: Ani
       if (!canvas || !ctx) return
 
       ctx.clearRect(0, 0, canvas.width, canvas.height)
-      ctx.filter = "blur(35px)"
+      ctx.filter = "blur(4px)"
 
       const totalBeams = beamsRef.current.length
       beamsRef.current.forEach((beam, index) => {
@@ -147,12 +147,12 @@ export default function BeamsBackground({ className, intensity = "strong" }: Ani
 
   return (
     <div className={cn("relative min-h-screen w-full overflow-hidden bg-brand-neutral", className)}>
-      <canvas ref={canvasRef} className="absolute inset-0" style={{ filter: "blur(15px)" }} />
+      <canvas ref={canvasRef} className="absolute inset-0" style={{ filter: "blur(2px)" }} />
 
       <motion.div
-        className="absolute inset-0 bg-brand-neutral/60"
+        className="absolute inset-0 bg-brand-neutral/10"
         animate={{
-          opacity: [0.05, 0.15, 0.05],
+          opacity: [0.01, 0.04, 0.01],
         }}
         transition={{
           duration: 10,
@@ -160,7 +160,7 @@ export default function BeamsBackground({ className, intensity = "strong" }: Ani
           repeat: Number.POSITIVE_INFINITY,
         }}
         style={{
-          backdropFilter: "blur(50px)",
+          backdropFilter: "blur(4px)",
         }}
       />
 

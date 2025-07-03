@@ -65,7 +65,7 @@ export default function agiflowLanding() {
             <div className="container px-4 md:px-6 relative z-10 mx-auto max-w-6xl">
               <div className="flex flex-col items-center space-y-8 text-center">
                 <div className="space-y-10 max-w-4xl">
-                  <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white leading-tight tracking-tight">
+                  <h1 className="font-display text-3xl md:text-5xl lg:text-6xl font-bold text-white leading-tight tracking-tight">
                     {texts.hero.title}
                   </h1>
                   <p className="mx-auto max-w-3xl text-lg md:text-xl lg:text-2xl text-white/90 leading-relaxed">
@@ -77,7 +77,7 @@ export default function agiflowLanding() {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <Button size="lg" className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-10 py-6 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+                      <Button size="lg" className="px-10 py-6 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105" variant="glass">
                         {texts.hero.cta}
                       </Button>
                     </a>
@@ -90,7 +90,7 @@ export default function agiflowLanding() {
           {/* ¿Qué es Agiflow.pro? */}
           <section id="que-es" className="w-full py-12 md:py-16 lg:py-20 bg-slate-800/50">
             <div className="container px-4 md:px-6 mx-auto max-w-7xl text-center">
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">{texts.queEs.title}</h2>
+              <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-4">{texts.queEs.title}</h2>
               <p className="text-lg text-white/90 mb-8">
                 {texts.queEs.description}
               </p>
@@ -145,7 +145,7 @@ export default function agiflowLanding() {
           {/* Planes y beneficios */}
           <section id="planes" className="w-full py-12 md:py-16 lg:py-20">
             <div className="container px-4 md:px-6 mx-auto max-w-7xl text-center">
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-8">{texts.planes.title}</h2>
+              <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-8">{texts.planes.title}</h2>
               <div className="grid gap-8 md:grid-cols-3">
                 {/* Plan Básico */}
                 <Card className="bg-slate-800/80 border-slate-700">
@@ -205,7 +205,7 @@ export default function agiflowLanding() {
           {/* ¿Qué solucionamos? */}
           <section id="soluciones" className="w-full py-12 md:py-16 lg:py-20 bg-slate-800/50">
             <div className="container px-4 md:px-6 mx-auto max-w-7xl text-center">
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-8">{texts.soluciones.title}</h2>
+              <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-8">{texts.soluciones.title}</h2>
               <div className="grid gap-6 md:grid-cols-3 max-w-4xl mx-auto mb-6">
                 {/* Problema 1 */}
                 <motion.div
@@ -285,7 +285,7 @@ export default function agiflowLanding() {
           {/* Resultados esperados */}
           <section id="resultados" className="w-full py-12 md:py-16 lg:py-20">
             <div className="container px-4 md:px-6 mx-auto max-w-7xl text-center">
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-8">{texts.resultados.title}</h2>
+              <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-8">{texts.resultados.title}</h2>
               <div className="grid gap-6 md:grid-cols-4 max-w-5xl mx-auto mb-6">
                 {/* Resultado 1 */}
                 <motion.div
@@ -353,15 +353,15 @@ export default function agiflowLanding() {
           id="contact"
           className="flex flex-col gap-4 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t border-white/10"
         >
-          <p className="text-xs text-white/60">{texts.footer.copyright}</p>
+          <p className="font-sans text-xs text-white/60">{texts.footer.copyright}</p>
           <nav className="sm:ml-auto flex flex-wrap gap-4 sm:gap-6 justify-center sm:justify-end">
-            <Link href="#" className="text-xs text-white/60 hover:text-white/80 transition-colors">
+            <Link href="#" className="font-sans text-xs text-white/60 hover:text-white/80 transition-colors">
               {texts.footer.terms}
             </Link>
-            <Link href="#" className="text-xs text-white/60 hover:text-white/80 transition-colors">
+            <Link href="#" className="font-sans text-xs text-white/60 hover:text-white/80 transition-colors">
               {texts.footer.privacy}
             </Link>
-            <Link href="#" className="text-xs text-white/60 hover:text-white/80 transition-colors">
+            <Link href="#" className="font-sans text-xs text-white/60 hover:text-white/80 transition-colors">
               {texts.footer.contact}
             </Link>
           </nav>
