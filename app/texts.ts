@@ -95,13 +95,13 @@ const texts = {
     inputPlaceholder: "Tu correo empresarial",
     cta: "Comenzar gratis",
     note: "Sin compromiso. Cancela cuando quieras.",
-    whatsapp: "Contáctanos por WhatsApp: +57 322 532 5279"
+    whatsapp: undefined
   },
   footer: {
     copyright: "© 2024 agiflow.pro. Todos los derechos reservados.",
     terms: "Términos de Servicio",
     privacy: "Política de Privacidad",
-    contact: "WhatsApp: +57 322 532 5279"
+    contact: undefined
   }
 }
 

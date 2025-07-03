@@ -9,6 +9,7 @@ import Link from "next/link"
 import texts from "./texts"
 import { useEffect, useState } from "react"
 import { AdvancedParticleSystem } from "@/components/ui/particles"
+import { config } from "./config"
 
 export default function agiflowLanding() {
   const [showHeader, setShowHeader] = useState(true);
@@ -58,7 +59,7 @@ export default function agiflowLanding() {
                     {texts.hero.description}
                   </p>
                   <a
-                    href="https://wa.me/573225325239"
+                    href={config.contact.whatsapp.url}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -79,7 +80,7 @@ export default function agiflowLanding() {
                   {texts.offer24h.title}
                 </h2>
                 <Countdown24h />
-                <a href="https://wa.me/573225325239" target="_blank" rel="noopener noreferrer">
+                <a href={config.contact.whatsapp.url} target="_blank" rel="noopener noreferrer">
                   <Button size="lg" className="bg-red-600 hover:bg-red-700 text-white px-8 py-4 text-lg font-bold mt-2">
                     {texts.offer24h.infoBtn}
                   </Button>
