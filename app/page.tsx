@@ -10,6 +10,7 @@ import Link from "next/link"
 import texts from "./texts"
 import { useEffect, useState } from "react"
 import { AdvancedParticleSystem } from "@/components/ui/particles"
+import BeamsBackground from "@/components/ui/beams-background"
 import { config } from "./config"
 
 export default function agiflowLanding() {
@@ -43,7 +44,8 @@ export default function agiflowLanding() {
 
   return (
     <>
-      <div className="fixed inset-0 z-[-10] bg-purple-900" />
+      {/* Fondo animado Beams */}
+      <BeamsBackground className="fixed inset-0 z-[-20] w-full h-full" intensity="strong" />
       <div className="fixed inset-0 z-0 pointer-events-none">
         <AdvancedParticleSystem />
       </div>
@@ -59,7 +61,6 @@ export default function agiflowLanding() {
         <main className="flex-1">
           {/* Hero Section */}
           <section className="w-full py-16 md:py-20 lg:py-28 xl:py-36 relative overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-purple-600/20" />
             <div className="container px-4 md:px-6 relative z-10 mx-auto max-w-6xl">
               <div className="flex flex-col items-center space-y-8 text-center">
                 <div className="space-y-10 max-w-4xl">
@@ -187,34 +188,6 @@ export default function agiflowLanding() {
                   <li key={idx}>{item}</li>
                 ))}
               </ul>
-            </div>
-          </section>
-
-          {/* Final CTA */}
-          <section className="w-full py-12 md:py-16 bg-gradient-to-r from-blue-600 to-purple-600 backdrop-blur-md rounded-xl">
-            <div className="container px-4 md:px-6 mx-auto max-w-7xl">
-              <div className="text-center space-y-6">
-                <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white">
-                  {texts.finalCta.title}
-                </h2>
-                <p className="text-lg md:text-xl text-white/90 max-w-3xl mx-auto">
-                  {texts.finalCta.description}
-                </p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center items-center max-w-md mx-auto">
-                  <Input
-                    type="email"
-                    placeholder={texts.finalCta.inputPlaceholder}
-                    className="bg-white/10 border-white/20 text-white placeholder:text-white/60 h-12"
-                  />
-                  <Button
-                    size="lg"
-                    className="bg-white text-blue-600 hover:bg-gray-100 font-bold px-8 h-12 whitespace-nowrap"
-                  >
-                    {texts.finalCta.cta}
-                  </Button>
-                </div>
-                <p className="text-sm text-white/70">{texts.finalCta.note}</p>
-              </div>
             </div>
           </section>
         </main>
