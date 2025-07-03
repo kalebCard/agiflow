@@ -42,7 +42,7 @@ export function AdvancedParticleSystem() {
   const particlesRef = useRef<Particle[]>([])
   const formationsRef = useRef<Formation[]>([])
   const forceFieldsRef = useRef<ForceField[]>([])
-  const animationRef = useRef<number>()
+  const animationRef = useRef<number>(0)
   const mouseRef = useRef({ x: 0, y: 0, isActive: false })
   const currentFormationRef = useRef(0)
   const formationTransitionRef = useRef(0)
@@ -629,25 +629,15 @@ export function AdvancedParticleSystem() {
   ])
 
   return (
-    <>
-      <canvas
-        ref={canvasRef}
-        className="fixed inset-0 pointer-events-none z-0"
-        style={{
-          background: "transparent",
-          willChange: "transform",
-          opacity: isLoaded ? 1 : 0,
-          transition: "opacity 1s ease-in-out",
-        }}
-      />
-      {!isLoaded && (
-        <div className="fixed inset-0 flex items-center justify-center z-10 bg-gradient-to-br from-slate-50 to-blue-50">
-          <div className="text-center">
-            <div className="w-16 h-16 border-4 border-blue-500 border-t-transparent rounded-full animate-spin mx-auto mb-4" />
-            <p className="text-gray-600 font-medium">Initializing Particle System...</p>
-          </div>
-        </div>
-      )}
-    </>
+    <canvas
+      ref={canvasRef}
+      className="fixed inset-0 pointer-events-none z-0"
+      style={{
+        background: "transparent",
+        willChange: "transform",
+        opacity: 1,
+        transition: undefined,
+      }}
+    />
   )
 }
