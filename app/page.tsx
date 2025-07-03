@@ -370,25 +370,24 @@ export default function agiflowLanding() {
 
       {/* Modal de Oferta de 24 Horas */}
       <Dialog open={showOfferModal} onOpenChange={setShowOfferModal}>
-        <DialogContent variant="glass" className="bg-gradient-to-br from-orange-500 to-red-600 text-white border-0 max-w-2xl">
-          <DialogHeader className="text-center">
-            <DialogTitle className="text-2xl md:text-3xl lg:text-4xl font-bold text-white">
-              {texts.offer24h.title}
-            </DialogTitle>
-          </DialogHeader>
-          
-          <div className="text-center space-y-6 py-4">
-            <Countdown24h />
-            
-            <a href={config.contact.whatsapp.url} target="_blank" rel="noopener noreferrer">
-              <Button size="lg" className="bg-red-600 hover:bg-red-700 text-white px-8 py-4 text-lg font-bold">
-                {texts.offer24h.infoBtn}
-              </Button>
-            </a>
-            
-            <p className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto">
-              {texts.offer24h.description}
-            </p>
+        <DialogContent variant="glass" className="max-w-2xl">
+          <div className="bg-white/20 backdrop-blur-md border border-white/30 shadow-lg text-white rounded-2xl p-8 flex flex-col items-center">
+            <DialogHeader className="text-center">
+              <DialogTitle className="text-2xl md:text-3xl lg:text-4xl font-bold text-white">
+                {texts.offer24h.title}
+              </DialogTitle>
+            </DialogHeader>
+            <div className="text-center space-y-6 py-4">
+              <Countdown24h />
+              <a href={config.contact.whatsapp.url} target="_blank" rel="noopener noreferrer">
+                <Button size="lg" className="bg-red-600 hover:bg-red-700 text-white px-8 py-4 text-lg font-bold">
+                  {texts.offer24h.infoBtn}
+                </Button>
+              </a>
+              <p className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto">
+                {texts.offer24h.description}
+              </p>
+            </div>
           </div>
         </DialogContent>
       </Dialog>
