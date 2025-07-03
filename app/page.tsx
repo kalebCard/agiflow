@@ -12,6 +12,7 @@ import { useEffect, useState } from "react"
 import { AdvancedParticleSystem } from "@/components/ui/particles"
 import BeamsBackground from "@/components/ui/beams-background"
 import { config } from "./config"
+import { motion } from "framer-motion"
 
 export default function agiflowLanding() {
   const [showHeader, setShowHeader] = useState(true);
@@ -86,8 +87,6 @@ export default function agiflowLanding() {
             </div>
           </section>
 
-
-
           {/* ¿Qué es Agiflow.pro? */}
           <section id="que-es" className="w-full py-12 md:py-16 lg:py-20 bg-slate-800/50">
             <div className="container px-4 md:px-6 mx-auto max-w-7xl text-center">
@@ -97,29 +96,47 @@ export default function agiflowLanding() {
               </p>
               <div className="grid gap-6 md:grid-cols-3 max-w-4xl mx-auto mb-6">
                 {/* Pilar 1 */}
-                <div className="bg-slate-900/80 rounded-xl shadow-lg p-6 flex flex-col items-center hover:scale-105 transition-transform border border-blue-700/40">
+                <motion.div
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.4 }}
+                  transition={{ duration: 0.7, delay: 0 }}
+                  className="bg-slate-900/80 rounded-xl shadow-lg p-6 flex flex-col items-center hover:scale-105 transition-transform border border-blue-700/40"
+                >
                   <span className="bg-blue-700/20 p-3 rounded-full mb-4">
                     <Clock className="h-10 w-10 text-blue-400" />
                   </span>
                   <h3 className="text-xl font-semibold text-white mb-2 text-center">Operaciones Inteligentes 24/7</h3>
                   <p className="text-white/80 text-base text-center">Robots de software y chatbots inteligentes que manejan facturación, atención y reservas sin intervención humana.</p>
-                </div>
+                </motion.div>
                 {/* Pilar 2 */}
-                <div className="bg-slate-900/80 rounded-xl shadow-lg p-6 flex flex-col items-center hover:scale-105 transition-transform border border-green-700/40">
+                <motion.div
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.4 }}
+                  transition={{ duration: 0.7, delay: 0.15 }}
+                  className="bg-slate-900/80 rounded-xl shadow-lg p-6 flex flex-col items-center hover:scale-105 transition-transform border border-green-700/40"
+                >
                   <span className="bg-green-700/20 p-3 rounded-full mb-4">
                     <TrendingUp className="h-10 w-10 text-green-400" />
                   </span>
                   <h3 className="text-xl font-semibold text-white mb-2 text-center">Ventas Automáticas Sin Pausa</h3>
                   <p className="text-white/80 text-base text-center">Embudos de captación y campañas de IA que atraen, nutren y convierten clientes 24/7.</p>
-                </div>
+                </motion.div>
                 {/* Pilar 3 */}
-                <div className="bg-slate-900/80 rounded-xl shadow-lg p-6 flex flex-col items-center hover:scale-105 transition-transform border border-purple-700/40">
+                <motion.div
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.4 }}
+                  transition={{ duration: 0.7, delay: 0.3 }}
+                  className="bg-slate-900/80 rounded-xl shadow-lg p-6 flex flex-col items-center hover:scale-105 transition-transform border border-purple-700/40"
+                >
                   <span className="bg-purple-700/20 p-3 rounded-full mb-4">
                     <BarChart3 className="h-10 w-10 text-purple-400" />
                   </span>
                   <h3 className="text-xl font-semibold text-white mb-2 text-center">Decisiones en tiempo real</h3>
                   <p className="text-white/80 text-base text-center">Dashboards que muestran métricas al instante y alertas inteligentes solo cuando necesitas actuar.</p>
-                </div>
+                </motion.div>
               </div>
               <p className="text-white/90 text-lg max-w-2xl mx-auto">{texts.queEs.closing}</p>
             </div>
@@ -188,27 +205,145 @@ export default function agiflowLanding() {
           {/* ¿Qué solucionamos? */}
           <section id="soluciones" className="w-full py-12 md:py-16 lg:py-20 bg-slate-800/50">
             <div className="container px-4 md:px-6 mx-auto max-w-7xl text-center">
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">{texts.soluciones.title}</h2>
-              <ul className="text-white/80 text-left max-w-xl mx-auto mb-4 space-y-2">
-                {texts.soluciones.bullets.map((item, idx) => (
-                  <li key={idx}>• {item}</li>
-                ))}
-              </ul>
-              <p className="text-white/90">
-                {texts.soluciones.closing}
-              </p>
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-8">{texts.soluciones.title}</h2>
+              <div className="grid gap-6 md:grid-cols-3 max-w-4xl mx-auto mb-6">
+                {/* Problema 1 */}
+                <motion.div
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.4 }}
+                  transition={{ duration: 0.7, delay: 0 }}
+                  className="bg-slate-900/80 rounded-xl shadow-lg p-6 flex flex-col items-center border border-blue-700/40"
+                >
+                  <span className="bg-blue-700/20 p-3 rounded-full mb-4">
+                    <Clock className="h-10 w-10 text-blue-400" />
+                  </span>
+                  <h3 className="text-lg font-semibold text-white mb-2 text-center">Tareas manuales interminables</h3>
+                  <p className="text-white/80 text-base text-center">que consumen tu tiempo diario.</p>
+                </motion.div>
+                {/* Problema 2 */}
+                <motion.div
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.4 }}
+                  transition={{ duration: 0.7, delay: 0.1 }}
+                  className="bg-slate-900/80 rounded-xl shadow-lg p-6 flex flex-col items-center border border-green-700/40"
+                >
+                  <span className="bg-green-700/20 p-3 rounded-full mb-4">
+                    <DollarSign className="h-10 w-10 text-green-400" />
+                  </span>
+                  <h3 className="text-lg font-semibold text-white mb-2 text-center">Publicidad ineficiente</h3>
+                  <p className="text-white/80 text-base text-center">que no genera ventas.</p>
+                </motion.div>
+                {/* Problema 3 */}
+                <motion.div
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.4 }}
+                  transition={{ duration: 0.7, delay: 0.2 }}
+                  className="bg-slate-900/80 rounded-xl shadow-lg p-6 flex flex-col items-center border border-yellow-700/40"
+                >
+                  <span className="bg-yellow-700/20 p-3 rounded-full mb-4">
+                    <AlertTriangle className="h-10 w-10 text-yellow-400" />
+                  </span>
+                  <h3 className="text-lg font-semibold text-white mb-2 text-center">Decisiones a ciegas</h3>
+                  <p className="text-white/80 text-base text-center">por falta de datos procesables.</p>
+                </motion.div>
+                {/* Problema 4 */}
+                <motion.div
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.4 }}
+                  transition={{ duration: 0.7, delay: 0.3 }}
+                  className="bg-slate-900/80 rounded-xl shadow-lg p-6 flex flex-col items-center border border-red-700/40"
+                >
+                  <span className="bg-red-700/20 p-3 rounded-full mb-4">
+                    <Users className="h-10 w-10 text-red-400" />
+                  </span>
+                  <h3 className="text-lg font-semibold text-white mb-2 text-center">Vida personal sacrificada</h3>
+                  <p className="text-white/80 text-base text-center">por el peso operativo del negocio.</p>
+                </motion.div>
+                {/* Problema 5 */}
+                <motion.div
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.4 }}
+                  transition={{ duration: 0.7, delay: 0.4 }}
+                  className="bg-slate-900/80 rounded-xl shadow-lg p-6 flex flex-col items-center border border-purple-700/40"
+                >
+                  <span className="bg-purple-700/20 p-3 rounded-full mb-4">
+                    <Target className="h-10 w-10 text-purple-400" />
+                  </span>
+                  <h3 className="text-lg font-semibold text-white mb-2 text-center">Oportunidades perdidas</h3>
+                  <p className="text-white/80 text-base text-center">por no poder escalar a tiempo.</p>
+                </motion.div>
+              </div>
+              <p className="text-white/90 text-lg max-w-2xl mx-auto">{texts.soluciones.closing}</p>
             </div>
           </section>
 
           {/* Resultados esperados */}
           <section id="resultados" className="w-full py-12 md:py-16 lg:py-20">
             <div className="container px-4 md:px-6 mx-auto max-w-7xl text-center">
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">{texts.resultados.title}</h2>
-              <ul className="text-white/80 text-left max-w-xl mx-auto mb-4 space-y-2">
-                {texts.resultados.bullets.map((item, idx) => (
-                  <li key={idx}>{item}</li>
-                ))}
-              </ul>
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-8">{texts.resultados.title}</h2>
+              <div className="grid gap-6 md:grid-cols-4 max-w-5xl mx-auto mb-6">
+                {/* Resultado 1 */}
+                <motion.div
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.4 }}
+                  transition={{ duration: 0.7, delay: 0 }}
+                  className="bg-slate-900/80 rounded-xl shadow-lg p-6 flex flex-col items-center border border-green-700/40"
+                >
+                  <span className="bg-green-700/20 p-3 rounded-full mb-4">
+                    <TrendingUp className="h-10 w-10 text-green-400" />
+                  </span>
+                  <h3 className="text-lg font-semibold text-white mb-2 text-center">3x más consultas</h3>
+                  <p className="text-white/80 text-base text-center">en 30 días gracias a embudos autónomos.</p>
+                </motion.div>
+                {/* Resultado 2 */}
+                <motion.div
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.4 }}
+                  transition={{ duration: 0.7, delay: 0.1 }}
+                  className="bg-slate-900/80 rounded-xl shadow-lg p-6 flex flex-col items-center border border-blue-700/40"
+                >
+                  <span className="bg-blue-700/20 p-3 rounded-full mb-4">
+                    <Clock className="h-10 w-10 text-blue-400" />
+                  </span>
+                  <h3 className="text-lg font-semibold text-white mb-2 text-center">2 horas libres diarias</h3>
+                  <p className="text-white/80 text-base text-center">al delegar procesos repetitivos.</p>
+                </motion.div>
+                {/* Resultado 3 */}
+                <motion.div
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.4 }}
+                  transition={{ duration: 0.7, delay: 0.2 }}
+                  className="bg-slate-900/80 rounded-xl shadow-lg p-6 flex flex-col items-center border border-yellow-700/40"
+                >
+                  <span className="bg-yellow-700/20 p-3 rounded-full mb-4">
+                    <DollarSign className="h-10 w-10 text-yellow-400" />
+                  </span>
+                  <h3 className="text-lg font-semibold text-white mb-2 text-center">15-50% más ventas</h3>
+                  <p className="text-white/80 text-base text-center">en 90 días con campañas optimizadas por IA.</p>
+                </motion.div>
+                {/* Resultado 4 */}
+                <motion.div
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.4 }}
+                  transition={{ duration: 0.7, delay: 0.3 }}
+                  className="bg-slate-900/80 rounded-xl shadow-lg p-6 flex flex-col items-center border border-purple-700/40"
+                >
+                  <span className="bg-purple-700/20 p-3 rounded-full mb-4">
+                    <BarChart3 className="h-10 w-10 text-purple-400" />
+                  </span>
+                  <h3 className="text-lg font-semibold text-white mb-2 text-center">Control total desde el celular</h3>
+                  <p className="text-white/80 text-base text-center">con dashboards inteligentes.</p>
+                </motion.div>
+              </div>
             </div>
           </section>
         </main>
