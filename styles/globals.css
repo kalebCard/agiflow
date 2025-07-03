@@ -4,12 +4,24 @@
 @tailwind utilities;
 
 body {
-  @apply font-sans text-base leading-relaxed text-foreground;
+  @apply font-sans text-base leading-relaxed;
+  color: #fff !important;
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+  .center-btn {
+    @apply flex justify-center items-center w-full;
+  }
+  .glass-strong {
+    @apply bg-white/20 backdrop-blur-md border border-white/30 shadow-lg text-white;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.35), 0 1px 0 rgba(0,0,0,0.15);
+    /* Mejora contraste y legibilidad */
+  }
+  .glass-strong:hover {
+    @apply bg-white/30 border-white/50;
   }
 }
 
@@ -98,8 +110,10 @@ body {
 @layer base {
   * {
     @apply border-border;
+    color: inherit !important;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background;
+    color: #fff !important;
   }
 }

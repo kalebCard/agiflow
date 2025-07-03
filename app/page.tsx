@@ -71,7 +71,7 @@ export default function agiflowLanding() {
                   <p className="mx-auto max-w-3xl text-lg md:text-xl lg:text-2xl text-white/90 leading-relaxed">
                     {texts.hero.description}
                   </p>
-                  <div className="pt-4">
+                  <div className="pt-4 center-btn">
                     <a
                       href={config.contact.whatsapp.url}
                       target="_blank"
@@ -148,7 +148,7 @@ export default function agiflowLanding() {
               <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-8">{texts.planes.title}</h2>
               <div className="grid gap-8 md:grid-cols-3">
                 {/* Plan Básico */}
-                <Card variant="glass" className="bg-white/20 backdrop-blur-md border border-white/30 shadow-lg text-white">
+                <Card variant="glass" className="glass-strong">
                   <CardHeader>
                     <CardTitle className="text-white text-xl">{texts.planes.basico.title}</CardTitle>
                     <CardDescription className="text-blue-400 font-semibold text-lg">{texts.planes.basico.description}</CardDescription>
@@ -165,7 +165,7 @@ export default function agiflowLanding() {
                   </CardContent>
                 </Card>
                 {/* Plan Medio */}
-                <Card variant="glass" className="bg-white/20 backdrop-blur-md border border-white/30 shadow-lg text-white">
+                <Card variant="glass" className="glass-strong">
                   <CardHeader>
                     <CardTitle className="text-white text-xl">{texts.planes.medio.title}</CardTitle>
                     <CardDescription className="text-orange-400 font-semibold text-lg">{texts.planes.medio.description}</CardDescription>
@@ -182,7 +182,7 @@ export default function agiflowLanding() {
                   </CardContent>
                 </Card>
                 {/* Plan Pro */}
-                <Card variant="glass" className="bg-white/20 backdrop-blur-md border border-white/30 shadow-lg text-white">
+                <Card variant="glass" className="glass-strong">
                   <CardHeader>
                     <CardTitle className="text-white text-xl">{texts.planes.pro.title}</CardTitle>
                     <CardDescription className="text-red-400 font-semibold text-lg">{texts.planes.pro.description}</CardDescription>
@@ -377,7 +377,7 @@ export default function agiflowLanding() {
                 {texts.offer24h.title}
               </DialogTitle>
             </DialogHeader>
-            <div className="text-center space-y-6 py-4">
+            <div className="text-center space-y-6 py-4 center-btn">
               <Countdown24h />
               <a href={config.contact.whatsapp.url} target="_blank" rel="noopener noreferrer">
                 <Button size="lg" className="bg-red-600 hover:bg-red-700 text-white px-8 py-4 text-lg font-bold">
