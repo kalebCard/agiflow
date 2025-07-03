@@ -4,7 +4,8 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { CheckCircle, Clock, TrendingUp, Zap, Target, BarChart3, Users, AlertTriangle, DollarSign } from "lucide-react"
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog"
+import { CheckCircle, Clock, TrendingUp, Zap, Target, BarChart3, Users, AlertTriangle, DollarSign, X } from "lucide-react"
 import Link from "next/link"
 import texts from "./texts"
 import { useEffect, useState } from "react"
@@ -14,6 +15,7 @@ import { config } from "./config"
 export default function agiflowLanding() {
   const [showHeader, setShowHeader] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const [showOfferModal, setShowOfferModal] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -29,6 +31,15 @@ export default function agiflowLanding() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScrollY]);
+
+  // Mostrar modal después de 1 minuto
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowOfferModal(true);
+    }, 60000); // 60 segundos = 1 minuto
+
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <>
@@ -51,7 +62,7 @@ export default function agiflowLanding() {
             <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-purple-600/20" />
             <div className="container px-4 md:px-6 relative z-10 mx-auto max-w-7xl">
               <div className="flex flex-col items-center space-y-6 text-center">
-                <div className="space-y-4 max-w-5xl">
+                <div className="space-y-8 max-w-5xl">
                   <h1 className="text-4xl md:text-6xl font-bold text-white leading-tight">
                     {texts.hero.title}
                   </h1>
@@ -72,23 +83,7 @@ export default function agiflowLanding() {
             </div>
           </section>
 
-          {/* 24-Hour Offer */}
-          <section className="w-full py-12 md:py-16 bg-gradient-to-r from-orange-500 to-red-600 backdrop-blur-md rounded-xl">
-            <div className="container px-4 md:px-6 mx-auto max-w-7xl">
-              <div className="flex flex-col items-center space-y-6 text-center">
-                <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white max-w-4xl">
-                  {texts.offer24h.title}
-                </h2>
-                <Countdown24h />
-                <a href={config.contact.whatsapp.url} target="_blank" rel="noopener noreferrer">
-                  <Button size="lg" className="bg-red-600 hover:bg-red-700 text-white px-8 py-4 text-lg font-bold mt-2">
-                    {texts.offer24h.infoBtn}
-                  </Button>
-                </a>
-                <p className="text-lg md:text-xl text-white/90 max-w-2xl">{texts.offer24h.description}</p>
-              </div>
-            </div>
-          </section>
+
 
           {/* ¿Qué es Agiflow.pro? */}
           <section id="que-es" className="w-full py-12 md:py-16 lg:py-20 bg-slate-800/50">
@@ -241,6 +236,31 @@ export default function agiflowLanding() {
           </nav>
         </footer>
       </div>
+
+      {/* Modal de Oferta de 24 Horas */}
+      <Dialog open={showOfferModal} onOpenChange={setShowOfferModal}>
+        <DialogContent className="bg-gradient-to-br from-orange-500 to-red-600 text-white border-0 max-w-2xl">
+          <DialogHeader className="text-center">
+            <DialogTitle className="text-2xl md:text-3xl lg:text-4xl font-bold text-white">
+              {texts.offer24h.title}
+            </DialogTitle>
+          </DialogHeader>
+          
+          <div className="text-center space-y-6 py-4">
+            <Countdown24h />
+            
+            <a href={config.contact.whatsapp.url} target="_blank" rel="noopener noreferrer">
+              <Button size="lg" className="bg-red-600 hover:bg-red-700 text-white px-8 py-4 text-lg font-bold">
+                {texts.offer24h.infoBtn}
+              </Button>
+            </a>
+            
+            <p className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto">
+              {texts.offer24h.description}
+            </p>
+          </div>
+        </DialogContent>
+      </Dialog>
     </>
   )
 }
