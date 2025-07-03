@@ -370,7 +370,7 @@ export default function agiflowLanding() {
 
       {/* Modal de Oferta de 24 Horas */}
       <Dialog open={showOfferModal} onOpenChange={setShowOfferModal}>
-        <DialogContent className="bg-gradient-to-br from-orange-500 to-red-600 text-white border-0 max-w-2xl">
+        <DialogContent variant="glass" className="bg-gradient-to-br from-orange-500 to-red-600 text-white border-0 max-w-2xl">
           <DialogHeader className="text-center">
             <DialogTitle className="text-2xl md:text-3xl lg:text-4xl font-bold text-white">
               {texts.offer24h.title}
