@@ -101,7 +101,7 @@ export default function agiflowLanding() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, amount: 0.4 }}
                   transition={{ duration: 0.7, delay: 0 }}
-                  className="bg-slate-900/80 rounded-xl shadow-lg p-6 flex flex-col items-center hover:scale-105 transition-transform border border-blue-700/40"
+                  className="bg-white/20 backdrop-blur-md border border-white/30 shadow-lg text-white rounded-xl p-6 flex flex-col items-center hover:scale-105 transition-transform"
                 >
                   <span className="bg-blue-700/20 p-3 rounded-full mb-4">
                     <Clock className="h-10 w-10 text-blue-400" />
@@ -115,7 +115,7 @@ export default function agiflowLanding() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, amount: 0.4 }}
                   transition={{ duration: 0.7, delay: 0.15 }}
-                  className="bg-slate-900/80 rounded-xl shadow-lg p-6 flex flex-col items-center hover:scale-105 transition-transform border border-green-700/40"
+                  className="bg-white/20 backdrop-blur-md border border-white/30 shadow-lg text-white rounded-xl p-6 flex flex-col items-center hover:scale-105 transition-transform"
                 >
                   <span className="bg-green-700/20 p-3 rounded-full mb-4">
                     <TrendingUp className="h-10 w-10 text-green-400" />
@@ -129,7 +129,7 @@ export default function agiflowLanding() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, amount: 0.4 }}
                   transition={{ duration: 0.7, delay: 0.3 }}
-                  className="bg-slate-900/80 rounded-xl shadow-lg p-6 flex flex-col items-center hover:scale-105 transition-transform border border-purple-700/40"
+                  className="bg-white/20 backdrop-blur-md border border-white/30 shadow-lg text-white rounded-xl p-6 flex flex-col items-center hover:scale-105 transition-transform"
                 >
                   <span className="bg-purple-700/20 p-3 rounded-full mb-4">
                     <BarChart3 className="h-10 w-10 text-purple-400" />
@@ -148,7 +148,7 @@ export default function agiflowLanding() {
               <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-8">{texts.planes.title}</h2>
               <div className="grid gap-8 md:grid-cols-3">
                 {/* Plan Básico */}
-                <Card className="bg-slate-800/80 border-slate-700">
+                <Card variant="glass" className="bg-white/20 backdrop-blur-md border border-white/30 shadow-lg text-white">
                   <CardHeader>
                     <CardTitle className="text-white text-xl">{texts.planes.basico.title}</CardTitle>
                     <CardDescription className="text-blue-400 font-semibold text-lg">{texts.planes.basico.description}</CardDescription>
@@ -165,7 +165,7 @@ export default function agiflowLanding() {
                   </CardContent>
                 </Card>
                 {/* Plan Medio */}
-                <Card className="bg-slate-800/80 border-orange-500">
+                <Card variant="glass" className="bg-white/20 backdrop-blur-md border border-white/30 shadow-lg text-white">
                   <CardHeader>
                     <CardTitle className="text-white text-xl">{texts.planes.medio.title}</CardTitle>
                     <CardDescription className="text-orange-400 font-semibold text-lg">{texts.planes.medio.description}</CardDescription>
@@ -182,7 +182,7 @@ export default function agiflowLanding() {
                   </CardContent>
                 </Card>
                 {/* Plan Pro */}
-                <Card className="bg-slate-800/80 border-red-600">
+                <Card variant="glass" className="bg-white/20 backdrop-blur-md border border-white/30 shadow-lg text-white">
                   <CardHeader>
                     <CardTitle className="text-white text-xl">{texts.planes.pro.title}</CardTitle>
                     <CardDescription className="text-red-400 font-semibold text-lg">{texts.planes.pro.description}</CardDescription>
@@ -213,7 +213,7 @@ export default function agiflowLanding() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, amount: 0.4 }}
                   transition={{ duration: 0.7, delay: 0 }}
-                  className="bg-slate-900/80 rounded-xl shadow-lg p-6 flex flex-col items-center border border-blue-700/40"
+                  className="bg-white/20 backdrop-blur-md border border-white/30 shadow-lg text-white rounded-xl p-6 flex flex-col items-center"
                 >
                   <span className="bg-blue-700/20 p-3 rounded-full mb-4">
                     <Clock className="h-10 w-10 text-blue-400" />
@@ -227,7 +227,7 @@ export default function agiflowLanding() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, amount: 0.4 }}
                   transition={{ duration: 0.7, delay: 0.1 }}
-                  className="bg-slate-900/80 rounded-xl shadow-lg p-6 flex flex-col items-center border border-green-700/40"
+                  className="bg-white/20 backdrop-blur-md border border-white/30 shadow-lg text-white rounded-xl p-6 flex flex-col items-center"
                 >
                   <span className="bg-green-700/20 p-3 rounded-full mb-4">
                     <DollarSign className="h-10 w-10 text-green-400" />
@@ -241,7 +241,7 @@ export default function agiflowLanding() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, amount: 0.4 }}
                   transition={{ duration: 0.7, delay: 0.2 }}
-                  className="bg-slate-900/80 rounded-xl shadow-lg p-6 flex flex-col items-center border border-yellow-700/40"
+                  className="bg-white/20 backdrop-blur-md border border-white/30 shadow-lg text-white rounded-xl p-6 flex flex-col items-center"
                 >
                   <span className="bg-yellow-700/20 p-3 rounded-full mb-4">
                     <AlertTriangle className="h-10 w-10 text-yellow-400" />
@@ -255,7 +255,7 @@ export default function agiflowLanding() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, amount: 0.4 }}
                   transition={{ duration: 0.7, delay: 0.3 }}
-                  className="bg-slate-900/80 rounded-xl shadow-lg p-6 flex flex-col items-center border border-red-700/40"
+                  className="bg-white/20 backdrop-blur-md border border-white/30 shadow-lg text-white rounded-xl p-6 flex flex-col items-center"
                 >
                   <span className="bg-red-700/20 p-3 rounded-full mb-4">
                     <Users className="h-10 w-10 text-red-400" />
@@ -269,7 +269,7 @@ export default function agiflowLanding() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, amount: 0.4 }}
                   transition={{ duration: 0.7, delay: 0.4 }}
-                  className="bg-slate-900/80 rounded-xl shadow-lg p-6 flex flex-col items-center border border-purple-700/40"
+                  className="bg-white/20 backdrop-blur-md border border-white/30 shadow-lg text-white rounded-xl p-6 flex flex-col items-center"
                 >
                   <span className="bg-purple-700/20 p-3 rounded-full mb-4">
                     <Target className="h-10 w-10 text-purple-400" />
@@ -293,7 +293,7 @@ export default function agiflowLanding() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, amount: 0.4 }}
                   transition={{ duration: 0.7, delay: 0 }}
-                  className="bg-slate-900/80 rounded-xl shadow-lg p-6 flex flex-col items-center border border-green-700/40"
+                  className="bg-white/20 backdrop-blur-md border border-white/30 shadow-lg text-white rounded-xl p-6 flex flex-col items-center"
                 >
                   <span className="bg-green-700/20 p-3 rounded-full mb-4">
                     <TrendingUp className="h-10 w-10 text-green-400" />
@@ -307,7 +307,7 @@ export default function agiflowLanding() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, amount: 0.4 }}
                   transition={{ duration: 0.7, delay: 0.1 }}
-                  className="bg-slate-900/80 rounded-xl shadow-lg p-6 flex flex-col items-center border border-blue-700/40"
+                  className="bg-white/20 backdrop-blur-md border border-white/30 shadow-lg text-white rounded-xl p-6 flex flex-col items-center"
                 >
                   <span className="bg-blue-700/20 p-3 rounded-full mb-4">
                     <Clock className="h-10 w-10 text-blue-400" />
@@ -321,7 +321,7 @@ export default function agiflowLanding() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, amount: 0.4 }}
                   transition={{ duration: 0.7, delay: 0.2 }}
-                  className="bg-slate-900/80 rounded-xl shadow-lg p-6 flex flex-col items-center border border-yellow-700/40"
+                  className="bg-white/20 backdrop-blur-md border border-white/30 shadow-lg text-white rounded-xl p-6 flex flex-col items-center"
                 >
                   <span className="bg-yellow-700/20 p-3 rounded-full mb-4">
                     <DollarSign className="h-10 w-10 text-yellow-400" />
@@ -335,7 +335,7 @@ export default function agiflowLanding() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, amount: 0.4 }}
                   transition={{ duration: 0.7, delay: 0.3 }}
-                  className="bg-slate-900/80 rounded-xl shadow-lg p-6 flex flex-col items-center border border-purple-700/40"
+                  className="bg-white/20 backdrop-blur-md border border-white/30 shadow-lg text-white rounded-xl p-6 flex flex-col items-center"
                 >
                   <span className="bg-purple-700/20 p-3 rounded-full mb-4">
                     <BarChart3 className="h-10 w-10 text-purple-400" />
