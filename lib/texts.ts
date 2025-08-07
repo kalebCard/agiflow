@@ -1,5 +1,4 @@
-// Archivo centralizado de textos para la landing page
-const texts = {
+export const texts = {
   header: {
     brand: "AgiFlow",
     nav: {
@@ -92,6 +91,4 @@ const texts = {
     privacy: "Política de Privacidad",
     contact: undefined
   }
-};
-
-export default texts;
+}
