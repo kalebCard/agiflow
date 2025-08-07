@@ -17,7 +17,6 @@ import { motion } from "framer-motion"
 export default function agiflowLanding() {
   const [showHeader, setShowHeader] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
-  const [showOfferModal, setShowOfferModal] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -33,15 +32,6 @@ export default function agiflowLanding() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScrollY]);
-
-  // Mostrar modal después de 1 minuto
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowOfferModal(true);
-    }, 60000); // 60 segundos = 1 minuto
-
-    return () => clearTimeout(timer);
-  }, []);
 
   return (
     <>
@@ -281,71 +271,6 @@ export default function agiflowLanding() {
               <p className="text-white/90 text-lg max-w-2xl mx-auto">{texts.soluciones.closing}</p>
             </div>
           </section>
-
-          {/* Resultados esperados */}
-          <section id="resultados" className="w-full py-12 md:py-16 lg:py-20">
-            <div className="container px-4 md:px-6 mx-auto max-w-7xl text-center">
-              <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-8">{texts.resultados.title}</h2>
-              <div className="grid gap-6 md:grid-cols-4 max-w-5xl mx-auto mb-6">
-                {/* Resultado 1 */}
-                <motion.div
-                  initial={{ opacity: 0, y: 40 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.4 }}
-                  transition={{ duration: 0.7, delay: 0 }}
-                  className="bg-white/20 backdrop-blur-md border border-white/30 shadow-lg text-white rounded-xl p-6 flex flex-col items-center"
-                >
-                  <span className="bg-green-700/20 p-3 rounded-full mb-4">
-                    <TrendingUp className="h-10 w-10 text-green-400" />
-                  </span>
-                  <h3 className="text-lg font-semibold text-white mb-2 text-center">3x más consultas</h3>
-                  <p className="text-white/80 text-base text-center">en 30 días gracias a embudos autónomos.</p>
-                </motion.div>
-                {/* Resultado 2 */}
-                <motion.div
-                  initial={{ opacity: 0, y: 40 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.4 }}
-                  transition={{ duration: 0.7, delay: 0.1 }}
-                  className="bg-white/20 backdrop-blur-md border border-white/30 shadow-lg text-white rounded-xl p-6 flex flex-col items-center"
-                >
-                  <span className="bg-blue-700/20 p-3 rounded-full mb-4">
-                    <Clock className="h-10 w-10 text-blue-400" />
-                  </span>
-                  <h3 className="text-lg font-semibold text-white mb-2 text-center">2 horas libres diarias</h3>
-                  <p className="text-white/80 text-base text-center">al delegar procesos repetitivos.</p>
-                </motion.div>
-                {/* Resultado 3 */}
-                <motion.div
-                  initial={{ opacity: 0, y: 40 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.4 }}
-                  transition={{ duration: 0.7, delay: 0.2 }}
-                  className="bg-white/20 backdrop-blur-md border border-white/30 shadow-lg text-white rounded-xl p-6 flex flex-col items-center"
-                >
-                  <span className="bg-yellow-700/20 p-3 rounded-full mb-4">
-                    <DollarSign className="h-10 w-10 text-yellow-400" />
-                  </span>
-                  <h3 className="text-lg font-semibold text-white mb-2 text-center">15-50% más ventas</h3>
-                  <p className="text-white/80 text-base text-center">en 90 días con campañas optimizadas por IA.</p>
-                </motion.div>
-                {/* Resultado 4 */}
-                <motion.div
-                  initial={{ opacity: 0, y: 40 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.4 }}
-                  transition={{ duration: 0.7, delay: 0.3 }}
-                  className="bg-white/20 backdrop-blur-md border border-white/30 shadow-lg text-white rounded-xl p-6 flex flex-col items-center"
-                >
-                  <span className="bg-purple-700/20 p-3 rounded-full mb-4">
-                    <BarChart3 className="h-10 w-10 text-purple-400" />
-                  </span>
-                  <h3 className="text-lg font-semibold text-white mb-2 text-center">Control total desde el celular</h3>
-                  <p className="text-white/80 text-base text-center">con dashboards inteligentes.</p>
-                </motion.div>
-              </div>
-            </div>
-          </section>
         </main>
 
         {/* Footer */}
@@ -367,52 +292,6 @@ export default function agiflowLanding() {
           </nav>
         </footer>
       </div>
-
-      {/* Modal de Oferta de 24 Horas */}
-      <Dialog open={showOfferModal} onOpenChange={setShowOfferModal}>
-        <DialogContent variant="glass" className="max-w-2xl">
-          <div className="bg-white/20 backdrop-blur-md border border-white/30 shadow-lg text-white rounded-2xl p-8 flex flex-col items-center">
-            <DialogHeader className="text-center">
-              <DialogTitle className="text-2xl md:text-3xl lg:text-4xl font-bold text-white">
-                {texts.offer24h.title}
-              </DialogTitle>
-            </DialogHeader>
-            <div className="text-center space-y-6 py-4 center-btn">
-              <Countdown24h />
-              <a href={config.contact.whatsapp.url} target="_blank" rel="noopener noreferrer">
-                <Button size="lg" className="bg-red-600 hover:bg-red-700 text-white px-8 py-4 text-lg font-bold">
-                  {texts.offer24h.infoBtn}
-                </Button>
-              </a>
-              <p className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto">
-                {texts.offer24h.description}
-              </p>
-            </div>
-          </div>
-        </DialogContent>
-      </Dialog>
     </>
-  )
-}
-
-// Componente de contador regresivo
-function Countdown24h() {
-  const [timeLeft, setTimeLeft] = useState(24 * 60 * 60); // 24 horas en segundos
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setTimeLeft((prev) => (prev > 0 ? prev - 1 : 0));
-    }, 1000);
-    return () => clearInterval(interval);
-  }, []);
-
-  const hours = String(Math.floor(timeLeft / 3600)).padStart(2, '0');
-  const minutes = String(Math.floor((timeLeft % 3600) / 60)).padStart(2, '0');
-  const seconds = String(timeLeft % 60).padStart(2, '0');
-
-  return (
-    <div className="text-5xl md:text-6xl font-extrabold text-white tracking-widest my-4">
-      {hours}:{minutes}:{seconds}
-    </div>
   );
 }

@@ -79,15 +79,6 @@ const texts = {
     ],
     closing: "Con Agiflow.pro integras IA en cada nivel (operaciones, marketing y análisis), para que tu empresa funcione, aprenda y escale sola, liberándote de errores y descansos innecesarios."
   },
-  resultados: {
-    title: "Resultados Comprobados",
-    bullets: [
-      "Hasta 3x más consultas en 30 días gracias a embudos autónomos.",
-      "2 horas libres diarias al delegar procesos repetitivos.",
-      "15-50% más ventas en 90 días con campañas optimizadas por IA.",
-      "Control total desde el celular con dashboards inteligentes."
-    ]
-  },
   finalCta: {
     title: "¿Listo para un negocio que trabaja solo?",
     description: "Reserva tu asesoría gratuita AHORA y asegura tu lugar en la capacitación antes de que termine el contador.",
