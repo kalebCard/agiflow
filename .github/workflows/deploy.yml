@@ -40,3 +40,5 @@ jobs:
           folder: out
           branch: gh-pages
           clean: true
+
+# Force workflow update - pnpm-lock.yaml should be available
