@@ -42,3 +42,4 @@ jobs:
           clean: true
 
 # Force workflow update - pnpm-lock.yaml should be available
+# Lock file regenerated for compatibility
